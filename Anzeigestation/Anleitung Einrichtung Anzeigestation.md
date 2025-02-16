@@ -10,7 +10,7 @@ Hinweis: Diese Anleitung wurde mit Debian 12 und XFCE 4.18 getestet.
 Nach dem ersten Start des Systems installiere die folgenden Pakete:
 
 ```bash
-sudo apt-get install htop apt-xapian-index net-tools
+sudo apt install htop apt-xapian-index net-tools
 ```
 
 
@@ -20,7 +20,7 @@ sudo apt-get install htop apt-xapian-index net-tools
 Für Benutzer kann zusätzlich eine 2FA für erhöhte Sicherheit eingerichtet werden.
 Dazu muss folgendes Paket installiert werden: libpam-google-authenticator
 ```bash
-sudo apt-get install libpam-google-authenticator
+sudo apt install libpam-google-authenticator
 ```
 
 Danach als normaler Benutzer einrichten:
@@ -31,6 +31,11 @@ google-authenticator
 
 
 ## 3. VNC-Einrichtung
+
+Installiere die notwendigen Pakete:
+```bash
+sudo apt install tigervnc-standalone-server tigervnc-common tigervnc-tools tigervnc-xorg-extension
+```
 
 ### 3.1. VNC für neue Session
 
@@ -76,7 +81,7 @@ EndSection
 Section "Screen"
     Identifier "Screen0"
     Option "passwordFile" "/etc/vncpasswd"
-    Option "localhost" "yes" #sorgt dafuer, dass es nicht von aussen erreichbar ist, sondern nur ueb>
+    Option "localhost" "yes" #sorgt dafuer, dass es nicht von aussen erreichbar ist
 EndSection
 ```
 
@@ -397,7 +402,7 @@ Eine genaue Anleitung zur Installation von Grafana befindet sich [hier](https://
 
 1.  **Voraussetzungen installieren:**
     ```bash
-    sudo apt-get install apt-transport-https software-properties-common wget
+    sudo apt install apt-transport-https software-properties-common wget
     ```
 
 2.  **GPG-Schlüssel importieren:**
@@ -413,12 +418,12 @@ Eine genaue Anleitung zur Installation von Grafana befindet sich [hier](https://
 
 4.  **Paketlisten aktualisieren:**
     ```bash
-    sudo apt-get update
+    sudo apt update
     ```
 
 5.  **Grafana installieren:**
     ```bash
-    sudo apt-get install grafana
+    sudo apt install grafana
     ```
 
 **Grafana konfigurieren:**
@@ -476,6 +481,7 @@ Schritte für die Erstellung eines Dashboards:
 Anschließend kann man sein eigenes Dashboard erstellen. Es können ebenfalls Dashboards importiert werden. Ein Beispiel-Dashboard für den Regenpausenanzeiger befindet [hier](Grafana/Wetterdaten.json).
 Dieses Beispiel-Dashboard zeigt die aktuellen Wetterdaten, sowie den Verlauf der letzten 24 Stunden an. Wenn gerade eine Pause ist, dann ändert sich die Überschrift "Regenpausenanzeiger" zur entsprechenden Pause.
 
+![Screenshot Grafana-Dashboard](Grafana/Wetterdaten_Beispiel.png)
 
 
 ## 6. Zugriff über `regenpausenanzeiger.local` im lokalen Netzwerk
