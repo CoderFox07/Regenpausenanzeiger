@@ -259,7 +259,7 @@ Anschließend muss Apache neu gestartet werden, sodass die Änderungen wirksam w
 ```bash
 sudo systemctl restart apache2
 ```
-Jetzt ist phpMyAdmin nicht mehr von außen erreichbar. Man kann entweder mit <http://localhost/phpmyadmin/> im Browserfenster vom Regenpausenanzeiger auf phpMyAdmin zugreifen oder mit einem SSH-Tunnel, indem man folgendes an einem anderen Rechner lokalen Rechner eingibt:
+Jetzt ist phpMyAdmin nicht mehr von außen erreichbar. Man kann entweder mit <http://localhost:8888/phpmyadmin/index.php> im Browserfenster vom Regenpausenanzeiger auf phpMyAdmin zugreifen oder mit einem SSH-Tunnel, indem man folgendes an einem anderen Rechner lokalen Rechner eingibt:
 
 ```bash
 ssh -L 8888:localhost:80 user@regenpausenanzeiger
@@ -271,7 +271,7 @@ http://localhost:8888/phpmyadmin
 ```
 
 Anschließend kann man mit phpMyAdmin die SQL-Datenbank genauer konfigurieren, wie im Bild gezeigt:
-![Screenshot Einrichtung SQL-Datenbank mit phpMyAdmin](/Screenshot_phpMyAdmin.png)
+![Screenshot Einrichtung SQL-Datenbank mit phpMyAdmin](Screenshot_phpMyAdmin.png)
 
 Es werden insgesamt sieben Spalten benötigt:
 1.  **ID:**
