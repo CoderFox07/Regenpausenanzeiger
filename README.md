@@ -6,9 +6,12 @@ An vielen Schulen müssen die Schüler die Pausen grundsätzlich im Freien verbr
 
 Der Regenpausenanzeiger automatisiert diese Entscheidung – ist aber weit mehr als nur ein Pausenhelfer. Die erfassten Wetterdaten lassen sich vielfältig nutzen, etwa für den Unterricht oder als langfristige Wetterbeobachtungen. Er lässt sich ebenfalls leicht als Wetterstation für zu Hause umfunktionieren.
 
+In diesem Repository befinden sich die Programme für die Stationen, 3D-Modelle und eine detaillierte Anleitung zur Einrichtung der Anzeigestation.
+
+YouTube-Video für weitere spannende Details: [Video Regenpausenanzeiger](https://youtu.be/XeapUQ0t9Z4)
+
 Ein ausführlicher Artikel zum Regenpausenanzeiger wurde von mir im AATiS-Praxisheft veröffentlicht: AATiS-Praxisheft 35 (2025), S. 36.
 Homepage zum AATiS e.V., auf der man das Heft bestellen kann: [AATiS e.V.](https://www.aatis.de/)
-
 
 Hier sind Links zu einigen der benötigten Komponenten:
 
