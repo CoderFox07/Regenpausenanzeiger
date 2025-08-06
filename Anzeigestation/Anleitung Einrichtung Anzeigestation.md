@@ -49,11 +49,8 @@ Sie sollte wie folgt angepasst werden:
 # pam-auth-update(8) for details.
 
 # here are the per-package modules (the "Primary" block)
-# Benuter Wetterdisplay soll ohne Passwort und 2FA funktionieren
-auth [success=3 default=ignore] pam_succeed_if.so user = wetterdisplay
 # Hinweis: forward_pass sorgt dafür, dass man den Verification-Code direkt hinter das Passwort schreiben kann.
 auth    required                        pam_google_authenticator.so forward_pass
-
 auth	[success=1 default=ignore]	pam_unix.so nullok
 # here's the fallback if no module succeeds
 auth	requisite			pam_deny.so
@@ -600,15 +597,16 @@ Die Datei sollte nun so aussehen:
 # here are the per-package modules (the "Primary" block)
 # Benuter Wetterdisplay soll ohne Passwort und 2FA funktionieren
 auth [success=3 default=ignore] pam_succeed_if.so user = wetterdisplay
-# forward_pass sorgt dafür, dass man den Verification-Code direkt hinter das Passwort schreiben kann.
+# Hinweis: forward_pass sorgt dafür, dass man den Verification-Code direkt hinter das Passwort schreiben kann.
 auth    required                        pam_google_authenticator.so forward_pass
-auth    [success=1 default=ignore]      pam_unix.so nullok
+
+auth	[success=1 default=ignore]	pam_unix.so nullok
 # here's the fallback if no module succeeds
-auth    requisite                       pam_deny.so
+auth	requisite			pam_deny.so
 # prime the stack with a positive return value if there isn't one already;
 # this avoids us returning an error just because nothing sets a success code
 # since the modules above will each just jump around
-auth    required                        pam_permit.so
+auth	required			pam_permit.so
 # and here are more per-package modules (the "Additional" block)
 # end of pam-auth-update config
 ```
