@@ -912,11 +912,11 @@ void sendDataToDach() {                       //Daten zu Dachstation senden.
   }
 }
 
-
+// Der Webserver auf der Sekretariatsstation dient nur zur Überwachung und kann nach Bedarf erweitert werden.
 // Route für die Startseite
 void handleStartseite(AsyncWebServerRequest *request) {
   // IP-Adresse des Client ausgeben:
-  Serial.print("Website aufgerufen: Startseite von: ");
+  Serial.print("Website aufgerufen: Start-Seite von: ");
   IPAddress clientIP = request->client()->remoteIP();
   Serial.println(clientIP);
 
@@ -956,7 +956,7 @@ void handleStartseite(AsyncWebServerRequest *request) {
 // Route für die Admin-Seite
 void handleAdmin(AsyncWebServerRequest *request) {
   // IP-Adresse des Client ausgeben:
-  Serial.print("Website aufgerufen: Startseite von: ");
+  Serial.print("Website aufgerufen: Admin-Seite von: ");
   IPAddress clientIP = request->client()->remoteIP();
   Serial.println(clientIP);
   request->send(200, "text/html", "<h1>Admin-Seite</h1><p>Hier koennten Admin-Funktionen sein.</p>");
@@ -967,7 +967,7 @@ void handleAdmin(AsyncWebServerRequest *request) {
 // Mit dieser Funktion lassen sich über die Sekretariatsstation LoRa-Pakete senden
 void handleSendPacketViaLoRa(AsyncWebServerRequest *request) {
   // IP-Adresse des Client ausgeben:
-  Serial.print("Website aufgerufen: Startseite von: ");
+  Serial.print("Website aufgerufen: LoRa-Seite von: ");
   IPAddress clientIP = request->client()->remoteIP();
   Serial.println(clientIP);
 
@@ -987,7 +987,7 @@ void handleSendPacketViaLoRa(AsyncWebServerRequest *request) {
 // Route für die Info-Seite
 void handleInfo(AsyncWebServerRequest *request) {
   // IP-Adresse des Client ausgeben:
-  Serial.print("Website aufgerufen: Startseite von: ");
+  Serial.print("Website aufgerufen: Info-Seite von: ");
   IPAddress clientIP = request->client()->remoteIP();
   Serial.println(clientIP);
 
@@ -999,4 +999,5 @@ void handleInfo(AsyncWebServerRequest *request) {
   infoPage += "<li><a href=\"/sendPacketViaLoRa\">LoRa-Seite</a></li>";
   infoPage += "</ul>";
   request->send(200, "text/html", infoPage);
+
 }
