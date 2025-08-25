@@ -2,7 +2,8 @@
 
 Diese Anleitung beschreibt die Installation und Konfiguration der Anzeigestation des Regenpausenanzeigers. Sie umfasst die Einrichtung eines LAMP-Servers (Linux, Apache, MariaDB, PHP), die Installation von phpMyAdmin und Grafana, sowie die Konfiguration für den automatischen Start und die Anzeige der Wetterdaten.
 Dazu wird ein Computer mit Debian als Betriebssystem mit XFCE als Oberfläche vorrausgesetzt.
-Hinweis: Diese Anleitung wurde mit Debian 12 und XFCE 4.18 getestet und sollte auch mit zukünftigen Debian-Versionen kompatibel sein. Bei einem Systemupgrade auf eine neue Debian-Hauptversion wird empfohlen, externe Paketquellen wie die von Grafana vorübergehend zu deaktivieren. Dabei muss Grafana nicht deinstalliert werden und Konfigurationen der Dashboards bleiben erhalten. Nach dem Upgrade müssen die Quellen wieder aktiviert werden, woraufhin Grafana über den Paketmanager normal aktualisiert werden kann.
+
+**Hinweis**: Diese Anleitung wurde mit Debian 12 und XFCE 4.18 getestet und sollte auch mit zukünftigen Debian-Versionen kompatibel sein. Bei einem Systemupgrade auf eine neue Debian-Hauptversion wird empfohlen, externe Paketquellen wie die von Grafana vorübergehend zu deaktivieren. Dabei muss Grafana nicht deinstalliert werden und Konfigurationen der Dashboards bleiben erhalten. Nach dem Upgrade müssen die Quellen wieder aktiviert werden, woraufhin Grafana über den Paketmanager normal aktualisiert werden kann.
 
 
 ## 1. Installation der Basispakete
